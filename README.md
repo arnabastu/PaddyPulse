@@ -141,7 +141,7 @@ AI   Database  Analytics
 
 ---
 
-# 🛠️ Tech Stack
+#  Tech Stack
 
 | Category | Technology |
 |----------|------------|
@@ -218,7 +218,7 @@ Dashboard displays live insights
 
 ---
 
-# 📡 API Endpoints
+#  API Endpoints
 
 | Method | Endpoint | Description |
 |---------|----------|-------------|
@@ -262,7 +262,7 @@ Dashboard displays live insights
 
 ---
 
-# 🌱 Future Enhancements
+#  Future Enhancements
 
 - Live IoT sensor integration
 - Advanced AI prediction models
