@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Dashboard",
+    "route": "/",
+    "icon": "📊",
+    "description": "Overall field summary and metrics"
+  },
+  {
+    "name": "Field Monitoring",
+    "route": "/field-monitoring",
+    "icon": "🌾",
+    "description": "Real-time sensor data and trends"
+  },
+  {
+    "name": "AI Insights",
+    "route": "/ai-insights",
+    "icon": "🤖",
+    "description": "Methane prediction and analysis"
+  },
+  {
+    "name": "Carbon Credits",
+    "route": "/carbon-credits",
+    "icon": "🌍",
+    "description": "Sustainability and climate impact"
+  },
+  {
+    "name": "Analytics",
+    "route": "/analytics",
+    "icon": "📈",
+    "description": "Historical trends and data"
+  },
+  {
+    "name": "Settings",
+    "route": "/settings",
+    "icon": "⚙️",
+    "description": "Configuration and preferences"
+  }
+]
