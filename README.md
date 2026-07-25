@@ -1,203 +1,297 @@
-# PaddyPulse - AI-Powered Smart Rice Farming Platform
+#  PaddyPulse
 
-An intelligent agricultural platform designed to help rice farmers monitor field conditions, predict methane emissions, optimize irrigation, and unlock opportunities in carbon credit programs.
+> **AI-Powered Smart Rice Farming Platform for Methane Monitoring, Sustainable Irrigation, and Carbon Credit Estimation**
 
-## 🚀 Quick Start
+PaddyPulse is an intelligent climate-tech platform designed to help rice farmers monitor field conditions, predict methane-prone situations, optimize irrigation practices, and estimate potential carbon credits. The platform combines environmental monitoring, AI-powered analytics, and sustainability insights into a single dashboard to promote climate-smart agriculture.
 
-### Backend Setup
-```bash
-cd backend
-python -m venv venv
-.\venv\Scripts\activate  # On Windows
-pip install -r requirements.txt
-python -m uvicorn app.main:app --reload
+---
+
+##  Overview
+
+Rice cultivation is one of the largest contributors to agricultural methane emissions due to prolonged flooded field conditions. Farmers often lack affordable tools to monitor field health, optimize irrigation, and quantify the environmental impact of sustainable practices.
+
+PaddyPulse addresses this challenge by providing:
+
+-  Real-time field monitoring
+-  AI-powered methane risk prediction
+-  Smart irrigation recommendations
+-  Historical field analytics
+-  Carbon credit estimation
+-  Sustainability insights
+
+The platform transforms raw environmental data into actionable recommendations that help farmers improve productivity while reducing greenhouse gas emissions.
+
+---
+
+#  Features
+
+##  Dashboard
+
+A centralized overview of the field's current condition.
+
+### Includes
+
+- Field Health Score
+- Live Sensor Readings
+- Methane Risk Indicator
+- AI Recommendations
+- System Status
+- Recent Alerts
+
+---
+
+##  Field Monitoring
+
+Monitor the real-time condition of the field.
+
+### Includes
+
+- Soil Bioelectric Voltage
+- Soil Moisture
+- Soil Temperature
+- Water Level (Optional)
+- Device Status
+- Sensor Connectivity
+
+---
+
+##  AI Insights
+
+Understand why the AI made its prediction.
+
+### Includes
+
+- Methane Risk Prediction
+- Confidence Score
+- Feature Importance
+- Environmental Analysis
+- Irrigation Recommendation
+
+---
+
+##  Analytics
+
+Analyze historical trends.
+
+### Includes
+
+- Voltage History
+- Moisture Trends
+- Temperature Trends
+- Methane Risk Timeline
+- Field Health Progress
+
+---
+
+##  Carbon Credits
+
+Estimate the environmental and economic benefits.
+
+### Includes
+
+- Estimated Methane Reduction
+- CO₂e Reduction
+- Estimated Carbon Credits
+- Estimated Farmer Earnings
+
+> **Note:** Carbon credit values shown in the MVP are simulated estimates intended for demonstration purposes.
+
+---
+
+##  Settings
+
+Manage platform preferences.
+
+### Includes
+
+- Field Information
+- Refresh Interval
+- Device Status
+- System Information
+
+---
+
+#  Key Capabilities
+
+- Real-time environmental monitoring
+- AI-powered methane risk assessment
+- Sustainable irrigation recommendations
+- Historical field analytics
+- Carbon impact estimation
+- Decision support for climate-smart farming
+
+---
+
+#  System Architecture
+
+```text
+ESP32 + Sensors
+        │
+        ▼
+ FastAPI Backend
+        │
+ ┌──────┼────────┐
+ │      │        │
+AI   Database  Analytics
+ │      │        │
+ └──────┼────────┘
+        ▼
+ React Dashboard
 ```
-Backend runs on `http://127.0.0.1:8000`
 
-### Frontend Setup
-```bash
-cd frontend
-npm install
-npm run dev
-```
-Frontend runs on `http://localhost:5173`
+---
 
-## 📋 Project Structure
+# 🛠️ Tech Stack
 
-```
+| Category | Technology |
+|----------|------------|
+| **Frontend** | React.js, Vite, Tailwind CSS |
+| **Backend** | FastAPI, Python |
+| **AI / ML** | Scikit-learn, Pandas, NumPy |
+| **Database** | SQLite |
+| **Hardware** | ESP32, Soil Microbial Fuel Cell (SMFC), Soil Moisture Sensor, Temperature Sensor |
+| **Visualization** | Recharts / Chart.js |
+| **Communication** | REST API, JSON |
+| **Version Control** | Git, GitHub |
+
+---
+
+#  Project Structure
+
+```text
 PaddyPulse/
-├── frontend/           # React + Vite application
+│
+├── frontend/
 │   ├── src/
-│   │   ├── components/    # Reusable UI components
-│   │   ├── pages/         # Page components (Dashboard, Monitoring, etc)
-│   │   ├── services/      # API client & axios config
-│   │   ├── hooks/         # Custom React hooks
-│   │   └── App.jsx
+│   ├── public/
 │   └── package.json
 │
-├── backend/            # FastAPI server
+├── backend/
 │   ├── app/
-│   │   ├── routes/        # API endpoints
-│   │   ├── services/      # Business logic & ML
-│   │   ├── models/        # SQLAlchemy models & Pydantic schemas
-│   │   ├── database/      # DB config
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── models/
+│   │   ├── database/
+│   │   ├── schemas/
 │   │   └── main.py
 │   └── requirements.txt
 │
-├── ai/                 # Machine Learning module
-│   ├── predict.py      # Methane prediction model
-│   └── model.pkl       # Trained model
+├── hardware/
+│   └── esp32.ino
 │
-└── Design/            # HTML UI designs
+├── ai/
+│   ├── model.pkl
+│   ├── train.py
+│   └── predict.py
+│
+└── README.md
 ```
 
-## 🌟 Core Features
+---
 
-### 1. Real-Time Field Monitoring
-- Soil bioelectric activity
-- Soil moisture level
-- Soil temperature
-- Water level tracking
-- Live sensor data updates
+#  Workflow
 
-### 2. AI-Based Methane Risk Prediction
-- Predicts methane generation risk (Low/Moderate/High)
-- Confidence scores with explanations
-- Contributing factor analysis
-
-### 3. Smart Irrigation Recommendations
-- Personalized irrigation actions based on field conditions
-- Options: Continue normal, AWD, Delay, Drain
-- Methane & water conservation optimization
-
-### 4. Field Health Assessment
-- Overall health score (0-100%)
-- Soil, water, and environmental metrics
-- Easy-to-understand summary
-
-### 5. Historical Analytics
-- 30-day trend analysis
-- Risk history tracking
-- Water usage patterns
-- Long-term field performance
-
-### 6. Carbon Credits Tracking
-- Estimated carbon credits earned
-- Water savings calculation
-- Methane prevention metrics
-- Sustainability benefits summary
-
-## 🛠️ Tech Stack
-
-**Frontend:**
-- React 18.2
-- Vite (build tool)
-- Tailwind CSS (styling)
-- Recharts (data visualization)
-- Axios (HTTP client)
-- React Router (navigation)
-
-**Backend:**
-- FastAPI
-- SQLAlchemy (ORM)
-- Pydantic (validation)
-- Scikit-learn (ML)
-- Pandas & NumPy (data processing)
-- SQLite (database)
-
-**AI/ML:**
-- Random Forest Classifier (methane prediction)
-- Feature engineering for agricultural data
-
-## 📡 API Endpoints
-
-```
-POST   /api/sensor/data              - Submit sensor readings
-GET    /api/sensor/current           - Get latest sensor data
-GET    /api/sensor/history           - Get historical data
-GET    /api/predict/methane          - Get methane risk prediction
-GET    /api/recommend/irrigation     - Get irrigation recommendation
-GET    /api/field/health             - Get field health score
-GET    /api/carbon/credits           - Get carbon credit estimation
-GET    /api/analytics/history        - Get analytics data
+```text
+Sensor Data Collection
+        │
+        ▼
+ESP32 acquires field data
+        │
+        ▼
+Backend receives sensor readings
+        │
+        ▼
+Data stored in database
+        │
+        ▼
+AI predicts methane risk
+        │
+        ▼
+Carbon impact estimated
+        │
+        ▼
+REST APIs serve processed data
+        │
+        ▼
+Dashboard displays live insights
 ```
 
-## 🔄 Data Flow
+---
 
-```
-ESP32 Sensors
-    ↓
-POST /sensor/data
-    ↓
-Backend Database (SQLite)
-    ↓
-ML Pipeline (Methane Prediction)
-    ↓
-React Frontend (Real-time Display)
-    ↓
-Farmer Recommendations
-```
+# 📡 API Endpoints
 
-## 🚀 Deployment
+| Method | Endpoint | Description |
+|---------|----------|-------------|
+| POST | `/sensor-data` | Receive sensor readings |
+| GET | `/dashboard` | Dashboard summary |
+| GET | `/field-monitoring` | Live field monitoring data |
+| GET | `/ai-insights` | AI prediction details |
+| GET | `/analytics` | Historical trends |
+| GET | `/carbon-credits` | Carbon impact estimation |
+| GET | `/settings` | User settings |
 
-### Frontend (Vercel/Netlify)
-```bash
-npm run build
-```
+---
 
-### Backend (Heroku/Railway/PythonAnywhere)
-```bash
-gunicorn -w 4 -b 0.0.0.0:8000 app.main:app
-```
+#  Project Goals
 
-## 📱 Hardware Integration (ESP32)
+- Reduce methane emissions from rice cultivation
+- Optimize irrigation practices
+- Improve decision-making through AI
+- Promote climate-smart agriculture
+- Enable carbon credit awareness
+- Support sustainable farming
 
-Sensor data from ESP32 is sent to `/api/sensor/data` endpoint:
-```json
-{
-  "soil_bioelectric": 35.0,
-  "soil_moisture": 72.0,
-  "soil_temperature": 25.5,
-  "water_level": 12.0
-}
-```
+---
 
-## 🤖 Machine Learning Model
+#  Development Status
 
-The methane prediction model uses:
-- Soil bioelectric activity
-- Soil moisture percentage
-- Temperature
-- Water level
+| Module | Status |
+|----------|:------:|
+| React Frontend | ✅ Completed |
+| Responsive UI | ✅ Completed |
+| FastAPI Backend | ✅ Completed |
+| API Endpoints | ✅ Completed |
+| Database Models | ✅ Completed |
+| AI Services | ✅ Initial Implementation |
+| Carbon Estimation | ✅ Initial Implementation |
+| Frontend ↔ Backend Integration | 🚧 In Progress |
+| Database Integration | 🚧 In Progress |
+| ESP32 Integration | ⏳ Planned |
+| Live AI Predictions | ⏳ Planned |
+| Testing & Deployment | ⏳ Planned |
 
-Training data is included in the backend to start immediately.
+---
 
-## 📊 Dashboard Pages
+# 🌱 Future Enhancements
 
-1. **Dashboard Home** - Overview with health score, methane risk, irrigation recommendation
-2. **Field Monitoring** - Real-time sensor data with live charts
-3. **AI Insights** - Methane predictions and contributing factors
-4. **Carbon Credits** - Sustainability metrics and credits earned
-5. **Analytics** - 30-day trends and historical data
-6. **Settings** - Farm configuration and preferences
+- Live IoT sensor integration
+- Advanced AI prediction models
+- Satellite-based field verification
+- Multi-field management
+- Mobile application
+- User authentication
+- Cloud deployment
+- Automated carbon credit verification
+- Multi-language support
+- Government and FPO integration
 
-## 🎯 Future Enhancements
+---
 
-- [ ] Multi-field support
-- [ ] Mobile app (React Native)
-- [ ] Advanced predictive models (LSTM)
-- [ ] Weather API integration
-- [ ] Crop disease detection
-- [ ] Yield prediction
-- [ ] Real-time alerts via email/SMS
-- [ ] Export reports to PDF
+#  Team
 
-## 📄 License
+**Project:** PaddyPulse
 
-MIT License - Feel free to use and modify
+**Tagline:**
+> *Empowering Sustainable Rice Farming through AI, Smart Monitoring, and Climate Intelligence.*
 
-## 👨‍💻 Development
+---
 
-Built with ❤️ for sustainable agriculture and climate action.
+##  License
 
-Questions? Check the documentation in the `Design/` folder for UI details.
+This project is developed for educational, research, and hackathon purposes.
+
+---
+
+##  Support
+
+If you found this project interesting, consider giving it a ⭐ on GitHub!
